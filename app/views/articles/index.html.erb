@@ -1,0 +1,41 @@
+<% title "Articles" %>
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<table class="zebra-striped">
+				<tr>
+					<th>Title</th>
+					<th>Content</th>
+					<th>Author</th>
+					<th>Tag</th>
+					<th>Featured</th>
+					<th>Approved</th>
+					<th>Page</th>
+				</tr>
+				<% for article in @articles %>
+				<tr>
+					<td><%= article.title %></td>
+					<td><%= article.content %></td>
+					<td><%= article.author %></td>
+					<td><%= article.tag %></td>
+					<td><%= article.featured %></td>
+					<td><%= article.approved %></td>
+					<td><%= article.page_id %></td>
+					<td><%= button_to "Show", article , :class => "btn primary" %></td>
+					<td><%= button_to "Edit", edit_article_path(article) , :class => "btn success" %></td>
+					<td> <%= button_to "Destroy", article_path(article	, :destroy => true),:confirm =>"Are you sure?", :method => :delete , :class => "btn danger" %></td>
+				</tr>
+				<% end %>
+			</table>
+			<p>
+				<%= link_to "New Article", new_article_path , :class => "btn primary large	" %>
+			</p>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<div class="clear"></div>
+	</div>
+</div>

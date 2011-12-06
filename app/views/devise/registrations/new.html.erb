@@ -1,0 +1,40 @@
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<h2>Sign up</h2>
+			<%= form_for(resource_name, resource, :url => registration_path(resource_name)) do |f| %>
+			<%= f.error_messages %>
+			<p>
+				<%= f.label :email %>
+			</p>
+			<p>
+				<%= f.text_field :email %>
+			</p>
+			<p>
+				<%= f.label :password %>
+			</p>
+			<p>
+				<%= f.password_field :password %>
+			</p>
+			<p>
+				<%= f.label :password_confirmation %>
+			</p>
+			<p>
+				<%= f.password_field :password_confirmation %>
+			</p>
+			<p>
+				<%= f.submit "Sign up" , :class => "btn primary" %>
+			</p>
+			<% end %>
+
+			<%= render :partial => "devise/shared/links" %>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="footer">
+	<div class="container_24">
+		<div class="botmenu">
+			<ul>
+				<% for page in @pages%>
+				
+				<li class="menu-red">
+								<%= link_to page.title, page_path(page) %>
+				</li>
+				<% end %>
+				
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="footer_logo">
+			<%= link_to image_tag('logo.png', :alt =>'Show', :size => '277x77'), root_path %> 
+			
+		</div>
+		<p class="copyright">
+			&copy; 2011 |  <a href="http://www.nexinnovaadvisorygroup.com/">NexInnova Advisory Group</a>.  All rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a>
+		</p>
+	</div>
+</div>

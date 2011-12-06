@@ -1,0 +1,30 @@
+<% title "Edit Ad" %>
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">Edit Advertisment
+				</li>
+			</ul>
+			<%= render 'form' %>
+			<p>
+				<%= link_to "Show", @ad %> |
+				<%= link_to "View All", ads_path %>
+			</p>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>
+<!--/ middle -->
+<!-- bottom content/widgets -->
+<%= render "shared/bottomcontent" %> <!--/ bottom content/widgets -->
+<%= render "shared/footer" %>
+</body>
+</html> 

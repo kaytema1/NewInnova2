@@ -1,0 +1,58 @@
+<div class="grid_8 sidebar">
+	<div class="newsletterBox">
+		<div class="inner">
+			<h3>Subscribe to Newsletter</h3>
+			<form method="get" id="subscribe" action="">
+				<input type="text" value="ENTER YOUR EMAIL ADDRESS"  name="email" class="inputField" />
+				<input type="submit" value="Submit" class="btn-arrow" />
+			</form>
+		</div>
+	</div>
+	<div class="adv_sidebar_300x250">
+		<%= image_tag('baner_300x250.jpg') %>
+	</div>
+	<!-- tf sidebar tabs -->
+	<div class="tf_sidebar_tabs tabs_framed">
+		<ul class="tabs">
+			<li>
+				<a href="#tf_tabs_1">Recent Posts</a>
+			</li>
+			<li>
+				<a href="#tf_tabs_2">Most Commented</a>
+			</li>
+		</ul>
+		<div id="tf_tabs_1" class="tabcontent">
+			<ul class="recent_posts">
+				<% for article in @all_sorted_articles %>
+				<li>
+					<%= link_to image_tag(article.image.url, :size => '54x54', :class => 'thumbnail'), article_path(article)  %> <%= link_to article.title , article_path(article) %>
+					<div class="date">
+						Feb 17, 2011
+						<%= article.created_at.to_s(:long) %>
+					</div>
+				</li>
+				<% end %> <li>
+			</ul>
+		</div>
+		<div id="tf_tabs_2" class="tabcontent">
+			<ul class="recent_posts">
+				<% for article in @all_sorted_articles %>
+				<li>
+					<%= link_to image_tag(article.image.url, :size => '54x54', :class => 'thumbnail'), article_path(article)  %> <%= link_to article.title , article_path(article) %>
+					<div class="date">
+						Feb 17, 2011
+						<%= article.created_at.to_s(:long) %>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<!--/ tf sidebar tabs -->
+	<div class="fb_container">
+		<div class="fb_title">
+			<%= image_tag("fb_activity_title.gif") %>
+		</div>
+		<iframe class="fbBox" src="http://www.facebook.com/widgets/activity.php?header=false&amp;height=360&amp;width=286&amp;border_color=%23ffffff&amp;site=www.engadget.com" style="border: medium none; overflow: hidden; height: 360px; width: 286px;" frameborder="0" scrolling="no"></iframe>
+	</div>
+</div>

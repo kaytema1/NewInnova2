@@ -1,0 +1,27 @@
+<% title "Ad" %>
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<p>
+				<strong>Image:</strong>
+				<%= image_tag(@ad.image.url) %>
+			</p>
+			<p>
+				<strong>Link:</strong>
+				<%= @ad.link %>
+			</p>
+			<p>
+				<%= button_to "Edit", edit_ad_path(@ad), :class => "btn primary" %> 
+				<%= button_to "Destroy", @ad, :confirm => 'Are you sure?', :method => :delete, :class => "btn primary" %> 
+				<%= button_to "View All", ads_path , :class => "btn primary" %>
+			</p>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>

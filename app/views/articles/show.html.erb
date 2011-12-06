@@ -1,0 +1,85 @@
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<div class="cat_title back_post">
+				<a href="blog.html" class="link-back">&lt; back to articles</a>
+				<div class="social_buttons_top">
+					<%= image_tag("temp/social_buttons.gif", :size => '217x20' )%>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!-- post details -->
+			<div class="post-item post-detail">
+				<h1><%= @article.title %></h1>
+				<div class="post-meta">
+					<span class="icon_cat icon_cat_blog"><a href="#">Blog</a></span>
+					<em>by <span class="author"><%= @article.author %> </span> &nbsp;|&nbsp; on <%= @article.created_at.to_s(:long) %> &nbsp;|&nbsp; <a href="#" class="link-comments"><%= @article.comments.count %> comments</a></em>
+				</div>
+				<div class="entry">
+					<p>
+						<%= image_tag @article.image.url , :size => '590x206' %>
+					</p>
+					<%= @article.content %> <div class="clear"></div>
+				</div>
+			</div>
+			<!--/ post details -->
+			<!-- post comments -->
+			<div class="comment-list" id="comments">
+				<a href="#addcomments" class="link-addcomment">Add a comment</a>
+				<% if @comments %> <h2>Comments (<%= @article.comments.count %>)</h2>
+				<ol>
+					<% for comment in @article.comments %>
+					<li class="comment">
+						<div class="comment-body">
+							<div class="avatar">
+								<%= image_tag("avatar_default.gif", :size => '40x40' )%>
+							</div>
+							<div class="comment-text">
+								<div class="comment-author">
+									<a href="#" class="link-author"><%= comment.author %></a> <%= comment.created_at.to_s(:long)%>
+								</div>
+								<div class="comment-entry">
+									<%= comment.text %>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</li>
+					<% end %>
+					<%= will_paginate @comments %>
+					<% end %>
+				</ol>
+			</div>
+			<!--/ post comments -->
+			<!-- add comment -->
+			<div class="add-comment" id="addcomments">
+				<h3>Add a comment</h3>
+				<table>
+					<%= form_for([@article, Comment.new]) do |form| %>
+					<tr>
+						<td>Your name (required)</td>
+						<td> <%= form.text_field :author, :class => "inputtext input_middle required" %> </td>
+					</tr>
+					<tr>
+						<td>Your message</td>
+						<td> <%= form.text_area :text, :class => "span6", :rows => "5"  %></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><%= form.submit 'Add Your Voice', :class => 'btn primary' %></td>
+					</tr>
+					<% end %>
+				</table>
+			</div>
+			<!--/add comment -->
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %>
+	
+		<div class="clear"></div>
+	</div>
+</div>

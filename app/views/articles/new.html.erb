@@ -1,0 +1,23 @@
+<% title "New Article" %>
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">Add an Article
+				</li>
+			</ul>
+			<%= render 'form' %>
+			<p>
+				<%= link_to "Back to List", articles_path %>
+			</p>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>

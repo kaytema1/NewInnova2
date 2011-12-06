@@ -1,0 +1,17 @@
+one:
+  title: MyString
+  content: MyText
+  author: MyString
+  tag: MyString
+  featured: false
+  approved: false
+  page_id: 1
+
+two:
+  title: MyString
+  content: MyText
+  author: MyString
+  tag: MyString
+  featured: false
+  approved: false
+  page_id: 1

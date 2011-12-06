@@ -1,0 +1,44 @@
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">Sign In
+				</li>
+			</ul>
+			<table>
+				<%= form_for(resource_name, resource, :url => session_path(resource_name)) do |f| %>
+				<tr>
+					<td> <%= f.label :email, :style => "text-align: left" %> </td>
+					<td> <%= f.text_field :email %> </td>
+				</tr>
+				<tr>
+					<td> <%= f.label :password, :style => "text-align: left" %></td>
+					<td> <%= f.password_field :password %></td>
+				</tr>
+				<% if devise_mapping.rememberable? -%>
+				<tr>
+					<td> <%= f.label :remember_me ,:style => "text-align: left" %> </td>
+					<td> <%= f.check_box :remember_me %></td>
+				</tr>
+				<% end -%>
+				<tr>
+					<td></td>
+					<td> <%= f.submit "Sign in" , :class => "btn primary" %></td>
+				</tr>
+			</table>
+			</p>
+
+			<% end %>
+
+			<%= render :partial => "devise/shared/links" %>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>

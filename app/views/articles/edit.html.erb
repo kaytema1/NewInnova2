@@ -1,0 +1,38 @@
+<% title "Edit Article" %>
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+		<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<p>
+				<strong>Image:</strong>
+				<%= @ad.image %>
+			</p>
+			<p>
+				<strong>Link:</strong>
+				<%= @ad.link %>
+			</p>
+			<p>
+				<%= link_to "Edit", edit_ad_path(@ad) %> |
+				<%= link_to "Destroy", @ad, :confirm => 'Are you sure?', :method => :delete %> |
+				<%= link_to "View All", ads_path %>
+			</p>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>
+<ul class="breadcrumb">
+  <li><a href="#">Edit Article
+  	</li>
+
+</ul>
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Show", @article %> |
+  <%= link_to "View All", articles_path %>
+</p>

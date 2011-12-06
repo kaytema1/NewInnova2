@@ -1,0 +1,23 @@
+<% title "New Ad" %>
+<div class="middle">
+	<div class="container_24">
+		<!-- featured list -->
+	<div class="divider_thin"></div>
+		<!--content -->
+		<div class="grid_15 suffix_1 content">
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">Add a Advertisement
+				</li>
+			</ul>
+			<%= render 'form' %>
+			<p>
+				<%= link_to "Back to List", ads_path %>
+			</p>
+		</div>
+		<!--/content -->
+		<!-- sidebar-->
+		<%= render "shared/sidebar" %> <!--/ sidebar -->
+		<div class="clear"></div>
+	</div>
+</div>

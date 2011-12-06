@@ -1,0 +1,22 @@
+<div id="feature_list">
+	<ul id="feature_tabs">
+		<% for article in @latest_articles %>
+		<li>
+			<span class="link-title"> <%= article.title %> </span>
+			<div class="feature_cat">
+				<span class="icon_cat icon_cat_1"> <%= article.tag %></span><a href="blog-details.html" class="link-more"><%= link_to "Read more", article_path(article) %></a>
+			</div>
+		</li>
+		<%end %>
+	</ul>
+	<ul id="feature_output">
+		<% for article in @latest_articles %>
+		<li>
+
+			<!-- <img src="images/temp/temp_featured_1.jpg" width="960" height="325" alt="" />   -->	
+			<%= link_to image_tag(article.image.url, :size => "960x325"), article_path(article) %>
+		
+		</li>
+		<% end %>
+	</ul>
+</div>
